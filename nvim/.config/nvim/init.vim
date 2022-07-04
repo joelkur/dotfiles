@@ -22,6 +22,7 @@ Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'folke/lua-dev.nvim'
 Plug 'kdheepak/lazygit.nvim'
+Plug 'rafamadriz/friendly-snippets'
 call plug#end()
 
 colorscheme tokyonight

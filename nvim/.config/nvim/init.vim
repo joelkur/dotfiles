@@ -23,6 +23,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'folke/lua-dev.nvim'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'rafamadriz/friendly-snippets'
+Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
 call plug#end()
 
 colorscheme tokyonight

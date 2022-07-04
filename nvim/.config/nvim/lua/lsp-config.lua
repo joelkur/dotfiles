@@ -55,7 +55,7 @@ vim.g.markdown_fenced_languages = {
 --   }
 -- end
 
-nvim_lsp.denls.setup {
+nvim_lsp.denols.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }

@@ -40,3 +40,4 @@ cmp.setup {
   },
 }
 
+require('luasnip/loaders/from_vscode').load({ paths = { '~/.local/share/nvim/plugged/friendly-snippets' } })

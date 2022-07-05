@@ -17,6 +17,7 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip' 
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'tpope/vim-surround'
 Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'kyazdani42/nvim-tree.lua'
@@ -26,7 +27,8 @@ Plug 'rafamadriz/friendly-snippets'
 Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
 call plug#end()
 
-colorscheme tokyonight
+set background=light
+colorscheme PaperColor
 
 nnoremap <C-H> <C-W>h
 nnoremap <C-J> <C-W>j

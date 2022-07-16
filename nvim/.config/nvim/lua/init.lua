@@ -1,3 +1,4 @@
+require "plugins-config"
 require "lsp-config"
 require "cmp-config"
 require "telescope-config"

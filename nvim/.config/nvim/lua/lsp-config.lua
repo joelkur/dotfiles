@@ -44,69 +44,64 @@ vim.g.markdown_fenced_languages = {
   "ts=typescript"
 }
 
--- local servers = { 'denols', 'sumneko_lua' }
--- for _, lsp in ipairs(servers) do
---   nvim_lsp[lsp].setup {
---     on_attach = on_attach,
---     capabilities = capabilities,
---     flags = {
---       debounce_text_changes = 150
---     }
---   }
--- end
+local function merge(t1, t2)
+    for k, v in pairs(t2) do
+        if (type(v) == "table") and (type(t1[k] or false) == "table") then
+            merge(t1[k], t2[k])
+        else
+            t1[k] = v
+        end
+    end
+    return t1
+end
 
-nvim_lsp.denols.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
-}
-
-nvim_lsp.tsserver.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  root_dir = nvim_lsp.util.root_pattern("package.json")
-}
-
-nvim_lsp.sumneko_lua.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  flags = {
-    debounce_text_changes = 150
-  },
-  settings = {
-    Lua = {
-      runtime = {
-        version = "LuaJIT",
-      },
-      diagnostics = {
-        globals = { "vim" },
-      },
-      workspace = {
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-      telemetry = {
-        enable = false,
+local servers = {
+  {'denols', custom_config = {
+    root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+    single_file_support = false,
+  }},
+  {'tsserver', custom_config = {
+    root_dir = nvim_lsp.util.root_pattern("package.json")
+  }},
+  {'sumneko_lua', custom_config = {
+    settings = {
+      Lua = {
+        runtime = {
+          version = "LuaJIT",
+        },
+        diagnostics = {
+          globals = { "vim" },
+        },
+        workspace = {
+          library = vim.api.nvim_get_runtime_file("", true),
+        },
+        telemetry = {
+          enable = false,
+        },
       },
     },
-  },
+  }},
+  'tailwindcss',
+  'rust_analyzer',
+  'html',
+  'cssls',
+  'svelte',
 }
 
-nvim_lsp.tailwindcss.setup {
-  on_attach = on_attach,
-  capabilities = capabilities
-}
+for _, lsp in ipairs(servers) do
+  local cfg = {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    flags = {
+      debounce_text_changes = 150
+    }
+  }
 
-nvim_lsp.rust_analyzer.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
+  local name = type(lsp) == "string" and lsp or lsp[1]
 
-nvim_lsp.html.setup {
-  on_attach = on_attach,
-  capabilities = capabilities
-}
+  if type(lsp) == "table" then
+    merge(cfg, lsp["custom_config"] or {})
+  end
+  nvim_lsp[name].setup(cfg)
+end
 
-nvim_lsp.cssls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities
-}

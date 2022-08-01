@@ -86,6 +86,7 @@ local servers = {
   'html',
   'cssls',
   'svelte',
+  'gopls',
 }
 
 for _, lsp in ipairs(servers) do

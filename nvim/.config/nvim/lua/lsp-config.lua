@@ -86,7 +86,15 @@ local servers = {
   'html',
   'cssls',
   'svelte',
-  'gopls',
+  {'gopls', custom_config = {
+    root_dir = nvim_lsp.util.root_pattern("go.work", "go.mod"),
+    settings = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+    },
+  }},
 }
 
 for _, lsp in ipairs(servers) do

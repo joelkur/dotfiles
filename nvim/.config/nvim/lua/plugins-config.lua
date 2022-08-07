@@ -27,6 +27,7 @@ return require('packer').startup(function(use)
   use 'kdheepak/lazygit.nvim'
   use 'rafamadriz/friendly-snippets'
   use { 'iamcco/coc-tailwindcss', run = 'yarn install --frozen-lockfile && yarn run build' }
+  use 'habamax/vim-godot'
 
   if packer_bootstrap then
     require('packer').sync()

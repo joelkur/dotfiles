@@ -95,6 +95,7 @@ local servers = {
       staticcheck = true,
     },
   }},
+  'gdscript',
 }
 
 for _, lsp in ipairs(servers) do

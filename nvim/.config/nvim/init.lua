@@ -4,6 +4,7 @@ vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.number = true
 vim.o.background = "dark"
+vim.o.relativenumber = true
 
 require("plugins-config")
 require("lsp-config")

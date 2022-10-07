@@ -15,4 +15,4 @@ require("nvim-tree-config")
 require("snippets")
 require("keymaps-config")
 
-vim.cmd[[colorscheme gruvbox]]
+vim.cmd([[colorscheme gruvbox]])

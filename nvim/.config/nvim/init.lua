@@ -5,6 +5,7 @@ vim.o.expandtab = true
 vim.o.number = true
 vim.o.background = "dark"
 vim.o.relativenumber = true
+vim.o.splitright = true
 
 require("plugins-config")
 require("lsp-config")

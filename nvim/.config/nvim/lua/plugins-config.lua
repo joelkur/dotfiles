@@ -29,6 +29,7 @@ return require('packer').startup(function(use)
   use { 'iamcco/coc-tailwindcss', run = 'yarn install --frozen-lockfile && yarn run build' }
   use 'habamax/vim-godot'
   use 'pantharshit00/vim-prisma'
+  use { 'romgrk/barbar.nvim', requires = {'kyazdani42/nvim-web-devicons'} }
 
   if packer_bootstrap then
     require('packer').sync()

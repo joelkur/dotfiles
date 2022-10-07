@@ -96,6 +96,7 @@ local servers = {
     },
   }},
   'gdscript',
+  'prismals',
 }
 
 for _, lsp in ipairs(servers) do

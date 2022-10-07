@@ -28,6 +28,7 @@ return require('packer').startup(function(use)
   use 'rafamadriz/friendly-snippets'
   use { 'iamcco/coc-tailwindcss', run = 'yarn install --frozen-lockfile && yarn run build' }
   use 'habamax/vim-godot'
+  use 'pantharshit00/vim-prisma'
 
   if packer_bootstrap then
     require('packer').sync()

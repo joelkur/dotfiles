@@ -4,10 +4,10 @@ vim.api.nvim_set_keymap("n", "<C-J>", "<C-W>j", opts)
 vim.api.nvim_set_keymap("n", "<C-K>", "<C-W>k", opts)
 vim.api.nvim_set_keymap("n", "<C-L>", "<C-W>l", opts)
 
-vim.api.nvim_set_keymap("n", "LG", ":LazyGit<Enter>", opts)
-vim.api.nvim_set_keymap("n", "TLG", ":Telescope live_grep<Enter>", opts)
-vim.api.nvim_set_keymap("n", "LINF", ":LspInfo<Enter>", opts)
-vim.api.nvim_set_keymap("n", "LINS", ":LspInstall<Enter>", opts)
+vim.api.nvim_set_keymap("n", "LG", "<Cmd>LazyGit<CR>", opts)
+vim.api.nvim_set_keymap("n", "TLG", "<Cmd>Telescope live_grep<CR>", opts)
+vim.api.nvim_set_keymap("n", "LINF", "<Cmd>LspInfo<CR>", opts)
+vim.api.nvim_set_keymap("n", "LINS", "<Cmd>LspInstall<CR>", opts)
 
 local map = vim.api.nvim_set_keymap
 
@@ -51,3 +51,5 @@ map("n", "<Space>bw", "<Cmd>BufferOrderByWindowNumber<CR>", opts)
 -- Other:
 -- :BarbarEnable - enables barbar (enabled by default)
 -- :BarbarDisable - very bad command, should never be used
+
+map("n", "rf", "<Cmd>lua vim.lsp.buf.rename()<CR>", opts)

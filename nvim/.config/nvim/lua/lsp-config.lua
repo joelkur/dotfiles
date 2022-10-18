@@ -4,7 +4,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
 local nvim_lsp = require("lspconfig")
-vim.lsp.set_log_level("debug")
+vim.lsp.set_log_level("warn")
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions

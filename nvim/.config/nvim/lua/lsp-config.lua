@@ -106,6 +106,7 @@ local servers = {
 	},
 	"gdscript",
 	"prismals",
+	"yamlls",
 }
 
 for _, lsp in ipairs(servers) do

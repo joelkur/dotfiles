@@ -1,7 +1,7 @@
 require("nvim-lsp-installer").setup({})
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 local nvim_lsp = require("lspconfig")
 vim.lsp.set_log_level("warn")

@@ -1,15 +1,15 @@
 local opts = { noremap = true, silent = true }
-vim.api.nvim_set_keymap("n", "<C-H>", "<C-W>h", opts)
-vim.api.nvim_set_keymap("n", "<C-J>", "<C-W>j", opts)
-vim.api.nvim_set_keymap("n", "<C-K>", "<C-W>k", opts)
-vim.api.nvim_set_keymap("n", "<C-L>", "<C-W>l", opts)
-
-vim.api.nvim_set_keymap("n", "LG", "<Cmd>LazyGit<CR>", opts)
-vim.api.nvim_set_keymap("n", "TLG", "<Cmd>Telescope live_grep<CR>", opts)
-vim.api.nvim_set_keymap("n", "LINF", "<Cmd>LspInfo<CR>", opts)
-vim.api.nvim_set_keymap("n", "LINS", "<Cmd>LspInstall<CR>", opts)
-
 local map = vim.api.nvim_set_keymap
+
+map("n", "<C-H>", "<C-W>h", opts)
+map("n", "<C-J>", "<C-W>j", opts)
+map("n", "<C-K>", "<C-W>k", opts)
+map("n", "<C-L>", "<C-W>l", opts)
+
+map("n", "LG", "<Cmd>LazyGit<CR>", opts)
+map("n", "TLG", "<Cmd>Telescope live_grep<CR>", opts)
+map("n", "LINF", "<Cmd>LspInfo<CR>", opts)
+map("n", "LINS", "<Cmd>LspInstall<CR>", opts)
 
 -- Move to previous/next
 map("n", "<A-h>", "<Cmd>BufferPrevious<CR>", opts)
@@ -53,3 +53,6 @@ map("n", "<Space>bw", "<Cmd>BufferOrderByWindowNumber<CR>", opts)
 -- :BarbarDisable - very bad command, should never be used
 
 map("n", "rf", "<Cmd>lua vim.lsp.buf.rename()<CR>", opts)
+--map("n", "fmt", "<Cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+
+map("n", "<Space>e", "<Cmd>lua vim.diagnostic.open_float()<CR>", opts)

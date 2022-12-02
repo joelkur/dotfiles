@@ -109,6 +109,7 @@ local servers = {
 	"yamlls",
 	"pyright",
 	"hls",
+	"astro",
 }
 
 for _, lsp in ipairs(servers) do
@@ -133,6 +134,7 @@ require("null-ls").setup({
 	sources = {
 		require("null-ls").builtins.formatting.stylua,
 		require("null-ls").builtins.formatting.prettier,
+		require("null-ls").builtins.formatting.black,
 		require("null-ls").builtins.diagnostics.eslint,
 		require("null-ls").builtins.completion.spell,
 	},
@@ -143,8 +145,7 @@ require("null-ls").setup({
 				group = augroup,
 				buffer = bufnr,
 				callback = function()
-					-- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-					vim.lsp.buf.formatting_sync()
+					vim.lsp.buf.format({ bufnr = bufnr })
 				end,
 			})
 		end

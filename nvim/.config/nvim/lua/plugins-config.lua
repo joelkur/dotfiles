@@ -26,8 +26,8 @@ return require("packer").startup(function(use)
   -- })
   use("ellisonleao/gruvbox.nvim")
   use("tpope/vim-surround")
-  use("kyazdani42/nvim-web-devicons") -- optional, for file icons
-  use("kyazdani42/nvim-tree.lua")
+  use("nvim-tree/nvim-web-devicons") -- optional, for file icons
+  use("nvim-tree/nvim-tree.lua")
   use("folke/lua-dev.nvim")
   use("kdheepak/lazygit.nvim")
   use("rafamadriz/friendly-snippets")

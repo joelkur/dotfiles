@@ -2,7 +2,9 @@
 
 killall -q polybar
 
-echo "---" | tee -a /tmp/topbar.log
-polybar topbar 2>&1 | tee -a /tmp/topbar.log & disown
 
-echo "Bar launched..."
+for monitor in $(xrandr --query | grep " connected" | cut -d " " -f1); do
+  echo "---" | tee -a /tmp/polybar-$monitor.log
+  MONITOR="$monitor" polybar topbar 2>&1 | tee -a /tmp/polybar-$monitor.log & disown
+done
+

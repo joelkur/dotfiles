@@ -56,3 +56,9 @@ map("n", "rf", "<Cmd>lua vim.lsp.buf.rename()<CR>", opts)
 --map("n", "fmt", "<Cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
 map("n", "<Space>e", "<Cmd>lua vim.diagnostic.open_float()<CR>", opts)
+
+
+map("i", "<A-Tab>", 'copilot#Accept("<CR>")', { silent=true, expr=true })
+map("i", "<A-h>", '<Plug>(copilot-previous)', { silent=true, noremap=true })
+map("i", "<A-l>", '<Plug>(copilot-next)', { silent=true, noremap=true })
+

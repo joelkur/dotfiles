@@ -1,8 +1,7 @@
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap =
-  fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
+  packer_bootstrap = fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
 end
 
 return require("packer").startup(function(use)
@@ -16,14 +15,8 @@ return require("packer").startup(function(use)
   use("hrsh7th/nvim-cmp")
   use("hrsh7th/cmp-nvim-lsp")
   use("saadparwaiz1/cmp_luasnip")
-  use("L3MON4D3/LuaSnip")
-  use({ "folke/tokyonight.nvim", branch = "main" })
+  use({ "L3MON4D3/LuaSnip", tag = "v1.*" })
   use("NLKNguyen/papercolor-theme")
-  --use("arcticicestudio/nord-vim")
-  -- use({
-  -- 	"shaunsingh/nord.nvim",
-  -- 	commit = "78f5f001709b5b321a35dcdc44549ef93185e024",
-  -- })
   use("ellisonleao/gruvbox.nvim")
   use("tpope/vim-surround")
   use("nvim-tree/nvim-web-devicons") -- optional, for file icons
@@ -37,22 +30,10 @@ return require("packer").startup(function(use)
   use({ "romgrk/barbar.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
   use({
     "jose-elias-alvarez/null-ls.nvim",
-    -- config = function()
-    --     require("null-ls").setup()
-    -- end,
     requires = { "nvim-lua/plenary.nvim" },
   })
   use({ "virchau13/tree-sitter-astro" })
   use({ "wuelnerdotexe/vim-astro" })
-  -- use("sainnhe/everforest")
-  -- use({
-  -- 	"projekt0n/github-nvim-theme",
-  -- 	config = function()
-  -- 		require("github-theme").setup({
-  -- 			theme_style = "dark",
-  -- 		})
-  -- 	end,
-  -- })
 
   if packer_bootstrap then
     require("packer").sync()

@@ -109,6 +109,7 @@ local servers = {
   "pyright",
   "hls",
   "astro",
+  "terraformls",
 }
 
 for _, lsp in ipairs(servers) do

@@ -34,6 +34,7 @@ return require("packer").startup(function(use)
   })
   use({ "virchau13/tree-sitter-astro" })
   use({ "wuelnerdotexe/vim-astro" })
+  use("hashivim/vim-terraform")
 
   if packer_bootstrap then
     require("packer").sync()

@@ -16,7 +16,7 @@ require("nvim-tree-config")
 -- require("snippets")
 require("keymaps-config")
 
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme carbonfox]])
 
 vim.cmd([[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]])
 vim.cmd([[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]])

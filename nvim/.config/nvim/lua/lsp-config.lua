@@ -67,7 +67,7 @@ local servers = {
     root_dir = nvim_lsp.util.root_pattern("package.json"),
   } },
   {
-    "sumneko_lua",
+    "lua_ls",
     custom_config = {
       settings = {
         Lua = {
@@ -109,6 +109,7 @@ local servers = {
   "pyright",
   "hls",
   "astro",
+  "terraformls",
 }
 
 for _, lsp in ipairs(servers) do

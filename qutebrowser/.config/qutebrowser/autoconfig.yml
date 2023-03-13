@@ -13,5 +13,7 @@ settings:
         ',M': hint links spawn mpv {hint-url}
         ',f': spawn mpv {url} --fullscreen
         ',m': spawn mpv {url}
+  content.autoplay:
+    global: false
   content.notifications.enabled:
     https://www.reddit.com: false

@@ -13,6 +13,16 @@ require("nvim-tree").setup({
   },
 })
 
+require("nvim-treesitter.configs").setup {
+  ensure_installed = { "elixir", "heex", "eex" },
+  sync_install = false,
+  ignore_install = {},
+  highlight = {
+    enable = true,
+    disable = {}
+  }
+}
+
 local nvim_tree_events = require("nvim-tree.events")
 local bufferline_api = require("bufferline.api")
 

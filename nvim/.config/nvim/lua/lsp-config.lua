@@ -110,7 +110,34 @@ local servers = {
   "hls",
   "astro",
   "terraformls",
-  "tailwindcss",
+  {
+    "tailwindcss",
+    custom_config = {
+      filetypes = {
+        "astro",
+        "astro-markdown",
+        "django-html",
+        "ejs",
+        "gohtml",
+        "html",
+        "html-eex",
+        "heex",
+        "markdown",
+        "mdx",
+        "css",
+        "less",
+        "postcss",
+        "sass", 
+        "scss",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "vue", 
+        "svelte"
+      }
+    }
+  },
   "elixirls",
 }
 

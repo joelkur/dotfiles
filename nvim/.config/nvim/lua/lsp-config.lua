@@ -111,6 +111,7 @@ local servers = {
   "astro",
   "terraformls",
   "tailwindcss",
+  "elixirls",
 }
 
 for _, lsp in ipairs(servers) do

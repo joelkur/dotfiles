@@ -19,6 +19,9 @@ return {
     },
   },
   {
+    "EdenEast/nightfox.nvim",
+  },
+  {
     "nvim-neotest/neotest",
     event = "User AstroFile",
     dependencies = {

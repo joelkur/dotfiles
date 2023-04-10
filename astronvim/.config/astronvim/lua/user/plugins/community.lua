@@ -11,4 +11,6 @@ return {
   { import = "astrocommunity.color.modes-nvim" },
   { import = "astrocommunity.color.twilight-nvim" },
   { import = "astrocommunity.markdown-and-latex.glow-nvim" },
+  { import = "astrocommunity.editing-support.neogen" },
+  { import = "astrocommunity.editing-support.treej" },
 }

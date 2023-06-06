@@ -17,6 +17,7 @@ return {
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.prisma" },
   { import = "astrocommunity.pack.svelte" },
+  { import = "astrocommunity.pack.terraform" },
   { import = "astrocommunity.color.modes-nvim" },
   { import = "astrocommunity.color.twilight-nvim" },
   { import = "astrocommunity.markdown-and-latex.glow-nvim" },

@@ -17,6 +17,8 @@ return {
         "marksman",
         "jsonls",
         "svelte",
+        "terraformls",
+        "tflint",
       },
     },
   },

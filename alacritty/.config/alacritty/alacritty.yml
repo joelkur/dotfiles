@@ -1,58 +1,31 @@
-items:
-  - colors:
-      name: 3024 (dark)
-      author: Chris Kempson
-      primary:
-        background: "#090300"
-        foreground: "#a5a2a2"
-      cursor:
-        text: "#090300"
-        cursor: "#a5a2a2"
-      normal:
-        black: "#090300"
-        red: "#db2d20"
-        green: "#01a252"
-        yellow: "#fded02"
-        blue: "#01a0e4"
-        magenta: "#a16a94"
-        cyan: "#b5e4f4"
-        white: "#a5a2a2"
-      bright:
-        black: "#5c5855"
-        red: "#db2d20"
-        green: "#01a252"
-        yellow: "#fded02"
-        blue: "#01a0e4"
-        magenta: "#a16a94"
-        cyan: "#b5e4f4"
-        white: "#f7f7f7"
-  - theme: 3024.dark
+# Isnpired from Iceberg theme.
 colors:
-  # Default colors
   primary:
-    background: '#10100E'
-    foreground: '#C6C6C4'
+    background: "0x16171E"
+    foreground: "0xD1D2D3"
+
+  cursor:
+    text: "0xFEFFFF"
+    cursor: "0xc7c7c7"
 
   # Normal colors
   normal:
-    black: '#10100E'
-    red: '#C40233'
-    green: '#009F6B'
-    yellow: '#FFD700'
-    blue: '#0087BD'
-    magenta: '#9A4EAE'
-    cyan: '#20B2AA'
-    white: '#C6C6C4'
+    black: "0x000000"
+    red: "0xE68E8E"
+    green: "0x83AC8E"
+    yellow: "0xF5B78A"
+    blue: "0x9BB8DC"
+    magenta: "0xBAACE2"
+    cyan: "0x00C5C7"
+    white: "0xC7C7C7"
 
   # Bright colors
   bright:
-    black: '#696969'
-    red: '#FF2400'
-    green: '#03C03C'
-    yellow: '#FDFF00'
-    blue: '#007FFF'
-    magenta: '#FF1493'
-    cyan: '#00CCCC'
-    white: '#FFFAFA'
-theme: Blood-Moon
-
+    black: "0x676767"
+    red: "0xFF6D67"
+    green: "0x5FF967"
+    yellow: "0xFEFB67"
+    blue: "0x6871FF"
+    magenta: "0xFF76FF"
+    cyan: "0x5FFDFF"
+    white: "0xFEFFFF"

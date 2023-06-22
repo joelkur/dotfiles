@@ -5,8 +5,8 @@ return {
   -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
 
   { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.colorscheme.iceberg-vim" },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
-  { import = "astrocommunity.colorscheme.kanagawa" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.yaml" },
@@ -21,5 +21,5 @@ return {
   { import = "astrocommunity.color.twilight-nvim" },
   { import = "astrocommunity.markdown-and-latex.glow-nvim" },
   { import = "astrocommunity.editing-support.neogen" },
-  { import = "astrocommunity.editing-support.treej" },
+  { import = "astrocommunity.editing-support.treesj" },
 }

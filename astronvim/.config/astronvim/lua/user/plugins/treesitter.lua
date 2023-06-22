@@ -4,6 +4,7 @@ return {
     ensure_installed = {
       "lua",
       "typescript",
+      "tsx",
       "elixir",
       "heex",
       "eex",
@@ -16,6 +17,7 @@ return {
       "bash",
       "yaml",
       "prisma",
+      "svelte",
     },
   },
 }

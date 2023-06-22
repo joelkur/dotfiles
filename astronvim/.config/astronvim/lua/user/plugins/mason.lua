@@ -16,6 +16,7 @@ return {
         "ruff_lsp",
         "marksman",
         "jsonls",
+        "svelte",
       },
     },
   },

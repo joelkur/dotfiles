@@ -3,7 +3,7 @@ return {
   {
     "goolord/alpha-nvim",
     opts = function(_, opts)
-      local handle = io.popen "fortune | cowsay -f tux"
+      local handle = io.popen "fortune linux | cowsay -f tux"
       local result = handle:read "*a"
       handle:close()
       opts.section.header.val = result

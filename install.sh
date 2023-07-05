@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 function section() {
   echo
@@ -33,7 +33,7 @@ function main() {
   
   section "Installing packages"
   # Install packages
-  sudo dnf install alacritty neovim nitrogen thunar polybar stow zsh ripgrep xclip lazygit brave-browser stack ghc solaar docker-ce docker-ce-cli containerd.io docker-compose-plugin syncthing keepassxc qutebrowser mpv
+  sudo dnf install alacritty neovim nitrogen thunar polybar stow zsh ripgrep xclip lazygit brave-browser stack ghc solaar docker-ce docker-ce-cli containerd.io docker-compose-plugin syncthing keepassxc qutebrowser mpv ranger w3m kitty
   
   section "Adding user to docker group"
   conditional "grep docker /etc/group" "sudo groupadd docker && sudo usermod -aG docker $USER"

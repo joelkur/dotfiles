@@ -25,6 +25,19 @@ return {
     local dap = require 'dap'
     local dapui = require 'dapui'
 
+    dap.configurations.typescript = {
+      {
+        type = "node2",
+        name = "Node attach",
+        request = "attach",
+        program = "${file}",
+        cwd = vim.fn.getcwd(),
+        souceMaps = true,
+        protocol = "inspector",
+      }
+    }
+    dap.configurations.javascript = dap.configurations.typescript
+
     require('mason-nvim-dap').setup {
       -- Makes a best effort to setup the various debuggers with
       -- reasonable debug configurations
@@ -32,7 +45,11 @@ return {
 
       -- You can provide additional configuration to the handlers,
       -- see mason-nvim-dap README for more information
-      handlers = {},
+      handlers = {
+        function(config)
+          require('mason-nvim-dap').default_setup(config)
+        end,
+      },
 
       -- You'll need to check that you have the required things installed
       -- online, please don't ask me how to install them :)

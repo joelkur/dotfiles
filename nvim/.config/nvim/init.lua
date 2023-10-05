@@ -189,6 +189,20 @@ require('lazy').setup({
     },
   },
 
+  { "nvim-tree/nvim-web-devicons" },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("nvim-tree").setup {}
+    end,
+  },
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -245,6 +259,9 @@ vim.o.completeopt = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience
@@ -265,6 +282,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
+require("nvim-tree").setup()
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
@@ -302,7 +321,10 @@ vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { de
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
-vim.keymap.set('n', '<leader>f', ":Telescope file_browser path=%:p:h select_buffer=true<CR>", { desc = 'File browser' })
+vim.keymap.set('n', '<leader>ft', ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+  { desc = 'Telescope file browser' })
+vim.keymap.set('n', '<leader>fb', ":NvimTreeToggle<CR>",
+  { desc = 'Toggle NvimTree' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
@@ -433,6 +455,7 @@ require('which-key').register({
   ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
   ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
   ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+  ['<leader>f'] = { name = '[F]iles', _ = 'which_key_ignore' },
 })
 
 -- Enable the following language servers

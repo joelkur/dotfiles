@@ -313,6 +313,11 @@ vim.keymap.set('n', '<leader>/', function()
   })
 end, { desc = '[/] Fuzzily search in current buffer' })
 
+vim.keymap.set("n", "<C-H>", "<C-W>h", { desc = "Switch to left window" })
+vim.keymap.set("n", "<C-J>", "<C-W>j", { desc = "Switch to below window" })
+vim.keymap.set("n", "<C-K>", "<C-W>k", { desc = "Switch to above window" })
+vim.keymap.set("n", "<C-L>", "<C-W>l", { desc = "Switch to right window" })
+
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
 vim.keymap.set('n', '<leader>gg', ":LazyGit<CR>", { desc = 'Start Lazy[G]it' })
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })

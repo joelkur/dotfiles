@@ -103,14 +103,9 @@ require('lazy').setup({
     },
   },
 
-  {
-    "rktjmp/lush.nvim",
-  },
+  { "rktjmp/lush.nvim" },
 
-  {
-    "mcchrish/zenbones.nvim",
-    requires = "rktjmp/lush.nvim"
-  },
+  { "mcchrish/zenbones.nvim" },
 
   -- {
   --   -- Theme inspired by Atom
@@ -145,7 +140,7 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'numToStr/Comment.nvim',      opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
   {

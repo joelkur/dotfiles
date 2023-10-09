@@ -315,6 +315,11 @@ require('telescope').setup {
       end
     },
   },
+  extensions = {
+    file_browser = {
+      hidden = { file_browser = true, folder_browser = true }
+    },
+  },
 }
 
 -- Enable telescope fzf native, if installed

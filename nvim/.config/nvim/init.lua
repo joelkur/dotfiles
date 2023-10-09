@@ -227,6 +227,10 @@ vim.o.hlsearch = false
 
 -- Make line numbers default
 vim.o.number = true
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
+vim.o.relativenumber = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -294,6 +298,21 @@ require('telescope').setup {
         ['<C-u>'] = false,
         ['<C-d>'] = false,
       },
+    },
+  },
+  pickers = {
+    find_files = {
+      hidden = true,
+    },
+    live_grep = {
+      additional_args = function()
+        return { '--hidden', '--glob', '!**/.git/*' }
+      end
+    },
+    grep_string = {
+      additional_args = function()
+        return { '--hidden', '--glob', '!**/.git/*' }
+      end
     },
   },
 }

@@ -104,11 +104,12 @@ require('lazy').setup({
   },
 
   {
+    "rktjmp/lush.nvim",
+  },
+
+  {
     "mcchrish/zenbones.nvim",
-    config = function()
-      vim.g.zenbones_compat = 1
-      vim.cmd.colorscheme 'zenbones'
-    end
+    requires = "rktjmp/lush.nvim"
   },
 
   -- {
@@ -127,7 +128,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'neobones',
         component_separators = '|',
         section_separators = '',
       },
@@ -231,6 +232,8 @@ vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.relativenumber = true
+vim.o.background = 'dark'
+vim.cmd.colorscheme 'neobones'
 
 -- Enable mouse mode
 vim.o.mouse = 'a'

@@ -123,7 +123,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'neobones',
+        theme = 'nordbones',
         component_separators = '|',
         section_separators = '',
       },
@@ -228,7 +228,7 @@ vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.relativenumber = true
 vim.o.background = 'dark'
-vim.cmd.colorscheme 'neobones'
+vim.cmd.colorscheme 'nordbones'
 
 -- Enable mouse mode
 vim.o.mouse = 'a'

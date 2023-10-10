@@ -1,7 +1,7 @@
 configuration {
   modes: [ combi ];
   combi-modes: [ window, drun, run ];
-  font: "FiraCode Nerd Font 16";
+  font: "CaskaydiaCove Nerd Font 16";
 }
 
 //@theme "gruvbox-dark-soft"

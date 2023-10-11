@@ -71,7 +71,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',  opts = {} },
+  { 'folke/which-key.nvim',      opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -106,6 +106,7 @@ require('lazy').setup({
   { "rktjmp/lush.nvim" },
 
   { "mcchrish/zenbones.nvim" },
+  { "NLKNguyen/papercolor-theme" },
 
   -- {
   --   -- Theme inspired by Atom
@@ -123,7 +124,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'nordbones',
+        theme = 'PaperColor',
         component_separators = '|',
         section_separators = '',
       },
@@ -227,8 +228,8 @@ vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.relativenumber = true
-vim.o.background = 'dark'
-vim.cmd.colorscheme 'nordbones'
+vim.cmd.colorscheme 'PaperColor'
+vim.o.background = 'light'
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -259,7 +260,7 @@ vim.o.timeoutlen = 300
 vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = true
+-- vim.o.termguicolors = true
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -278,11 +279,16 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- vim.keymap.set('v', 'J', ":m '>+1<CR>=='")
 -- vim.keymap.set('v', 'K', ":m '<-2<CR>=='")
 
+function toggleBackground()
+  vim.o.background = vim.o.background == 'light' and 'dark' or 'light'
+end
+
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("n", "<leader>wt", toggleBackground, { desc = "Toggle light/dark mode" })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`

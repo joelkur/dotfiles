@@ -229,7 +229,7 @@ vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.relativenumber = true
 vim.cmd.colorscheme 'PaperColor'
-vim.o.background = 'light'
+vim.o.background = 'dark'
 
 -- Enable mouse mode
 vim.o.mouse = 'a'

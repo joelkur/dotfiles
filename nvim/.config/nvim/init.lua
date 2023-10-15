@@ -200,6 +200,10 @@ require('lazy').setup({
     end,
   },
 
+  {
+    "mg979/vim-visual-multi"
+  },
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.

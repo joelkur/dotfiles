@@ -204,6 +204,15 @@ require('lazy').setup({
     "mg979/vim-visual-multi"
   },
 
+  {
+    'mrcjkb/haskell-tools.nvim',
+    dependencies = {
+      "nvim-lua/plenary.nvim"
+    },
+    version = "^2",
+    ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject' }
+  },
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -536,6 +545,9 @@ local servers = {
   tsserver = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   elixirls = {},
+  hls = {
+    filetypes = { 'haskell', 'lhaskell', 'cabal' }
+  },
 
   lua_ls = {
     Lua = {

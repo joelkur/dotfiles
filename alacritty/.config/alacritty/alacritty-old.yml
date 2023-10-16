@@ -1,0 +1,58 @@
+items:
+  - colors:
+      name: 3024 (dark)
+      author: Chris Kempson
+      primary:
+        background: "#090300"
+        foreground: "#a5a2a2"
+      cursor:
+        text: "#090300"
+        cursor: "#a5a2a2"
+      normal:
+        black: "#090300"
+        red: "#db2d20"
+        green: "#01a252"
+        yellow: "#fded02"
+        blue: "#01a0e4"
+        magenta: "#a16a94"
+        cyan: "#b5e4f4"
+        white: "#a5a2a2"
+      bright:
+        black: "#5c5855"
+        red: "#db2d20"
+        green: "#01a252"
+        yellow: "#fded02"
+        blue: "#01a0e4"
+        magenta: "#a16a94"
+        cyan: "#b5e4f4"
+        white: "#f7f7f7"
+  - theme: 3024.dark
+colors:
+  # Default colors
+  primary:
+    background: '#10100E'
+    foreground: '#C6C6C4'
+
+  # Normal colors
+  normal:
+    black: '#10100E'
+    red: '#C40233'
+    green: '#009F6B'
+    yellow: '#FFD700'
+    blue: '#0087BD'
+    magenta: '#9A4EAE'
+    cyan: '#20B2AA'
+    white: '#C6C6C4'
+
+  # Bright colors
+  bright:
+    black: '#696969'
+    red: '#FF2400'
+    green: '#03C03C'
+    yellow: '#FDFF00'
+    blue: '#007FFF'
+    magenta: '#FF1493'
+    cyan: '#00CCCC'
+    white: '#FFFAFA'
+theme: Blood-Moon
+

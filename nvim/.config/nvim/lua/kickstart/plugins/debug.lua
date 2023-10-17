@@ -28,11 +28,19 @@ return {
     dap.configurations.typescript = {
       {
         type = "node2",
-        name = "Node attach",
+        name = "Docker: attach to remote container",
         request = "attach",
-        -- program = "${file}",
         localRoot = vim.fn.getcwd(),
         remoteRoot = 'usr/app',
+        skipFiles = { "<node_internals>/**", "node_modules/**" },
+        cwd = vim.fn.getcwd(),
+        souceMaps = true,
+        protocol = "inspector",
+      },
+      {
+        type = "node2",
+        name = "Local: node attach",
+        request = "attach",
         skipFiles = { "<node_internals>/**", "node_modules/**" },
         cwd = vim.fn.getcwd(),
         souceMaps = true,

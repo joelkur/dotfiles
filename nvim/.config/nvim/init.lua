@@ -545,15 +545,66 @@ local servers = {
   tsserver = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   elixirls = {},
+  tailwindcss = {
+    init_options = {
+      userLanguages = {
+        elixir = "phoenix-heex",
+        heex = "phoenix-heex",
+        svelte = "html",
+        rust = "html",
+      },
+    },
+    handlers = {
+      ["tailwindcss/getConfiguration"] = function(_, _, params, _, bufnr, _)
+        vim.lsp.buf_notify(bufnr, "tailwindcss/getConfigurationResponse", { _id = params._id })
+      end,
+    },
+    settings = {
+      includeLanguages = {
+        typescript = "javascript",
+        typescriptreact = "javascript",
+        ["html-eex"] = "html",
+        ["phoenix-heex"] = "html",
+        heex = "html",
+        eelixir = "html",
+        elixir = "html",
+        elm = "html",
+        svelte = "html",
+        rust = "html",
+      },
+      tailwindCSS = {
+        lint = {
+          cssConflict = "warning",
+          invalidApply = "error",
+          invalidConfigPath = "error",
+          invalidScreen = "error",
+          invalidTailwindDirective = "error",
+          invalidVariant = "error",
+          recommendedVariantOrder = "warning",
+        },
+        experimental = {
+          classRegex = {
+            [[class= "([^"]*)]],
+            [[class: "([^"]*)]],
+            '~H""".*class="([^"]*)".*"""',
+            '~F""".*class="([^"]*)".*"""',
+          },
+        },
+        validate = true,
+      },
+    },
+  },
   hls = {
     filetypes = { 'haskell', 'lhaskell', 'cabal' }
   },
 
   lua_ls = {
-    Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-    },
+    settings = {
+      Lua = {
+        workspace = { checkThirdParty = false },
+        telemetry = { enable = false },
+      },
+    }
   },
 }
 
@@ -576,8 +627,10 @@ mason_lspconfig.setup_handlers {
     require('lspconfig')[server_name].setup {
       capabilities = capabilities,
       on_attach = on_attach,
-      settings = servers[server_name],
+      settings = (servers[server_name] or {}).settings,
       filetypes = (servers[server_name] or {}).filetypes,
+      handlers = (servers[server_name] or {}).handlers,
+      init_options = (servers[server_name] or {}).init_options,
     }
   end
 }

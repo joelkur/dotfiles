@@ -537,12 +537,19 @@ require('which-key').register({
 --
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
+local nvim_lsp = require("lspconfig")
 local servers = {
   -- clangd = {},
   -- gopls = {},
   pyright = {},
   -- rust_analyzer = {},
-  tsserver = {},
+  tsserver = {
+    root_dir = nvim_lsp.util.root_pattern("package.json"),
+    single_file_support = false,
+  },
+  denols = {
+    root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+  },
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   elixirls = {},
   tailwindcss = {
@@ -631,6 +638,8 @@ mason_lspconfig.setup_handlers {
       filetypes = (servers[server_name] or {}).filetypes,
       handlers = (servers[server_name] or {}).handlers,
       init_options = (servers[server_name] or {}).init_options,
+      root_dir = (servers[server_name] or {}).root_dir,
+      single_file_support = (servers[server_name] or {}).single_file_support,
     }
   end
 }

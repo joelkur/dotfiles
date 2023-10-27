@@ -1,8 +1,8 @@
 #!/bin/bash
 trap "exit" INT
 
-# echo "Updating packages"
-# sudo dnf upgrade
+echo "Updating packages"
+sudo dnf upgrade
 
 if dnf repolist | grep -q brave-browser; then
   echo "Brave browser is installed - skipping adding repo for install"

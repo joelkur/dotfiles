@@ -400,6 +400,7 @@ vim.defer_fn(function()
       "elixir",
       "heex",
       "eex",
+      "haskell",
     },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
@@ -665,19 +666,23 @@ vim.g.haskell_tools = {
         vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
       end
 
+      require('which-key').register({
+        ['<leader>H'] = { name = '[H]askell', _ = 'which_key_ignore' },
+      })
+
       local bufnr = vim.api.nvim_get_current_buf()
       -- local def_opts = { noremap = true, silent = true, buffer = bufnr, }
       -- haskell-language-server relies heavily on codeLenses,
       -- so auto-refresh (see advanced configuration) is enabled by default
-      nmap('<space>hc', vim.lsp.codelens.run, "Run code lens")
-      nmap('<space>hh', ht.hoogle.hoogle_signature,
+      nmap('<space>Hc', vim.lsp.codelens.run, "Run code lens")
+      nmap('<space>Hh', ht.hoogle.hoogle_signature,
         "Hoogle search for the type signature of the definition under the cursor")
-      nmap('<space>he', ht.lsp.buf_eval_all, "Evaluate all code snippets")
-      nmap('<leader>hr', ht.repl.toggle, "Toggle a GHCi repl for the current package")
-      nmap('<leader>hp', function()
+      nmap('<space>He', ht.lsp.buf_eval_all, "Evaluate all code snippets")
+      nmap('<leader>Hr', ht.repl.toggle, "Toggle a GHCi repl for the current package")
+      nmap('<leader>Hp', function()
         ht.repl.toggle(vim.api.nvim_buf_get_name(0))
       end, "Toggle GHCi repl for the current buffer")
-      nmap('<leader>hq', ht.repl.quit, "Quit GHCi repl")
+      nmap('<leader>Hq', ht.repl.quit, "Quit GHCi repl")
     end
   },
   ---@type HTDapOpts

@@ -641,6 +641,22 @@ mason_lspconfig.setup_handlers {
   end
 }
 
+---@type HTOpts
+vim.g.haskell_tools = {
+  ---@type ToolsOpts
+  tools = {
+    hover = {
+      enable = false
+    },
+  },
+  ---@type HaskellLspClientOpts
+  hls = {
+    on_attach = on_attach,
+  },
+  ---@type HTDapOpts
+  dap = {},
+}
+
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
 local cmp = require 'cmp'

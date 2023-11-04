@@ -646,12 +646,39 @@ vim.g.haskell_tools = {
   ---@type ToolsOpts
   tools = {
     hover = {
-      enable = false
+      enable = true
     },
   },
   ---@type HaskellLspClientOpts
   hls = {
-    on_attach = on_attach,
+    ---@param client number The LSP client ID.
+    ---@param bufnr number The buffer number
+    ---@param ht HaskellTools = require('haskell-tools')
+    on_attach = function(client, bufnr, ht)
+      on_attach(client, bufnr)
+
+      local nmap = function(keys, func, desc)
+        if desc then
+          desc = 'Haskell: ' .. desc
+        end
+
+        vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+      end
+
+      local bufnr = vim.api.nvim_get_current_buf()
+      -- local def_opts = { noremap = true, silent = true, buffer = bufnr, }
+      -- haskell-language-server relies heavily on codeLenses,
+      -- so auto-refresh (see advanced configuration) is enabled by default
+      nmap('<space>hc', vim.lsp.codelens.run, "Run code lens")
+      nmap('<space>hh', ht.hoogle.hoogle_signature,
+        "Hoogle search for the type signature of the definition under the cursor")
+      nmap('<space>he', ht.lsp.buf_eval_all, "Evaluate all code snippets")
+      nmap('<leader>hr', ht.repl.toggle, "Toggle a GHCi repl for the current package")
+      nmap('<leader>hp', function()
+        ht.repl.toggle(vim.api.nvim_buf_get_name(0))
+      end, "Toggle GHCi repl for the current buffer")
+      nmap('<leader>hq', ht.repl.quit, "Quit GHCi repl")
+    end
   },
   ---@type HTDapOpts
   dap = {},

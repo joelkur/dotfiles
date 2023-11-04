@@ -206,10 +206,7 @@ require('lazy').setup({
 
   {
     'mrcjkb/haskell-tools.nvim',
-    dependencies = {
-      "nvim-lua/plenary.nvim"
-    },
-    version = "^2",
+    version = "^3",
     ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject' }
   },
 
@@ -601,9 +598,9 @@ local servers = {
       },
     },
   },
-  hls = {
-    filetypes = { 'haskell', 'lhaskell', 'cabal' }
-  },
+  -- hls = {
+  --   filetypes = { 'haskell', 'lhaskell', 'cabal' }
+  -- },
 
   lua_ls = {
     settings = {

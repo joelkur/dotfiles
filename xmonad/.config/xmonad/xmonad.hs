@@ -1,4 +1,9 @@
 import XMonad
 
 main :: IO ()
-main = xmonad def
+main =
+  xmonad
+    def
+      { modMask = mod4Mask
+      , terminal = "kitty"
+      }

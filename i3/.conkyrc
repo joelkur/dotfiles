@@ -25,7 +25,7 @@ conky.config = {
     draw_outline = false,
     draw_shades = false,
     extra_newline = false,
-    font = 'CaskaydiaCove Nerd Font:size=12',
+    font = 'IosevkaTerm Nerd Font:size=12',
     gap_x = 60,
     gap_y = 60,
     minimum_height = 5,

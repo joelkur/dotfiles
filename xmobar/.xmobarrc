@@ -1,6 +1,6 @@
 Config { 
    -- appearance
-     font =         "Bitstream Vera Sans Mono Bold 9"
+     font =         "xft:IosevkaTerm Nerd Font:size=11"
    , bgColor =      "black"
    , fgColor =      "#646464"
    , position =     Top

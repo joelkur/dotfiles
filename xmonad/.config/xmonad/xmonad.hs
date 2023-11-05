@@ -3,6 +3,7 @@ import XMonad
 import XMonad.Hooks.DynamicLog (PP (ppCurrent, ppOutput, ppSep, ppTitleSanitize), dynamicLogWithPP, wrap, xmobarBorder, xmobarColor, xmobarProp, xmobarStrip)
 import XMonad.Hooks.EwmhDesktops (ewmh, ewmhFullscreen)
 import XMonad.Hooks.StatusBar (defToggleStrutsKey, statusBarProp, withEasySB)
+import XMonad.Layout.Spacing (spacingWithEdge)
 import XMonad.Layout.ThreeColumns
 import XMonad.Util.EZConfig
 import XMonad.Util.Loggers
@@ -20,9 +21,9 @@ myConfig =
   def
     { modMask = mod4Mask
     , terminal = "kitty"
-    , layoutHook = myLayout
-    , -- , logHook = myXmobar
-      borderWidth = 2
+    , layoutHook = spacingWithEdge 5 $ myLayout
+    , borderWidth = 2
+    -- , logHook = myXmobar
     }
     `additionalKeysP` [ ("M-S-b", spawn "brave-browser")
                       ]

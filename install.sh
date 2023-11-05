@@ -82,7 +82,13 @@ done
 (
   cd xmonad/.config/xmonad &&
   cabal update &&
-  cabal install --package-env=./ --overwrite-policy=always --lib base xmonad xmonad-contrib &&
-  cabal install --package-env=./ --overwrite-policy=always xmonad
+  cabal install --package-env=./ --lib base xmonad xmonad-contrib &&
+  cabal install --package-env=./ xmonad
 )
 
+(
+  cd xmobar/.config/xmobar &&
+  cabal update &&
+  cabal install --package-env=./ --lib base xmobar &&
+  cabal install --package-env=./ xmobar
+)

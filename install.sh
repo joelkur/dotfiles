@@ -79,6 +79,14 @@ do
   fi
 done
 
+if grep -q "cabal" $HOME/.profile; then
+  echo "$HOME/.cabal/bin is already added to path"
+else
+  echo "Adding $HOME/.cabal/bin to path"
+  echo "PATH=\"\$HOME/.cabal/bin:\$PATH\"" >> $HOME/.profile
+  echo "export PATH" >> $HOME/.profile
+fi
+
 (
   cd xmonad/.config/xmonad &&
   cabal update &&

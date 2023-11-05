@@ -1,2 +1,2 @@
-#!/bin/sh
-exec ~/.cabal/bin/xmonad
+#!/bin/bash
+exec xmonad

@@ -1,6 +1,6 @@
 import XMonad
 
-import XMonad.Hooks.DynamicLog (PP (ppCurrent, ppOutput, ppSep, ppTitleSanitize), dynamicLogWithPP, wrap, xmobarBorder, xmobarColor, xmobarProp, xmobarStrip)
+import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops (ewmh, ewmhFullscreen)
 import XMonad.Hooks.StatusBar (defToggleStrutsKey, statusBarProp, withEasySB)
 import XMonad.Layout.Spacing (spacingWithEdge)
@@ -21,27 +21,20 @@ myConfig =
   def
     { modMask = mod4Mask
     , terminal = "kitty"
-    , layoutHook = spacingWithEdge 5 $ myLayout
+    , layoutHook = spacingWithEdge 5 myLayout
     , borderWidth = 2
     -- , logHook = myXmobar
     }
     `additionalKeysP` [ ("M-S-b", spawn "brave-browser")
                       ]
 
--- myXmobarPP :: PP
--- myXmobarPP =
---   def
---     { ppSep = magenta " - "
---     , ppTitleSanitize = xmobarStrip
---     , ppCurrent = wrap " " "" . xmobarBorder "Top" "8be9fd" 2
---     }
---  where
---   magenta = xmobarColor "#ff79c6" ""
+myXmobarPP :: PP
+myXmobarPP = def
 
 main :: IO ()
 main =
   xmonad
     . ewmhFullscreen
     . ewmh
-    . xmobarProp
+    . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) defToggleStrutsKey
     $ myConfig

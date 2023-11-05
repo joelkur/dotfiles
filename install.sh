@@ -30,7 +30,7 @@ else
 fi
 
 echo "Installing packages"
-sudo dnf install alacritty neovim nitrogen thunar polybar stow zsh ripgrep xclip git lazygit brave-browser stack solaar docker-ce docker-ce-cli containerd.io docker-compose-plugin syncthing keepassxc qutebrowser mpv ranger w3m kitty libX11-devel libXft-devel libXinerama-devel libXrandr-devel libXScrnSaver-devel xorg-x11-xinit-session
+sudo dnf install alacritty neovim nitrogen thunar polybar stow zsh ripgrep xclip git lazygit brave-browser stack solaar docker-ce docker-ce-cli containerd.io docker-compose-plugin syncthing keepassxc qutebrowser mpv ranger w3m kitty libX11-devel libXft-devel libXinerama-devel libXrandr-devel libXScrnSaver-devel xorg-x11-xinit-session xmobar
 
 if grep -q docker /etc/group; then
   echo "User already added to docker group"
@@ -94,9 +94,10 @@ fi
   cabal install --package-env=./ xmonad
 )
 
-(
-  cd xmobar/.config/xmobar &&
-  cabal update &&
-  cabal install --package-env=./ --lib base xmobar &&
-  cabal install --package-env=./ xmobar
-)
+# TODO: maybe build xmobar from source in future. This just seems like too much of a hassle for now
+# (
+#   cd xmobar/.config/xmobar &&
+#   cabal update &&
+#   cabal install --package-env=./ --lib base xmobar &&
+#   cabal install --package-env=./ xmobar
+# )

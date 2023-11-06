@@ -8,6 +8,7 @@ import XMonad.Layout.ThreeColumns
 import XMonad.Util.EZConfig
 import XMonad.Util.Loggers
 import XMonad.Util.Run (hPutStrLn, spawnPipe)
+import XMonad.Util.SpawnOnce (spawnOnce)
 
 myLayout = tiled ||| Mirror tiled ||| Full ||| threeCol
  where
@@ -23,13 +24,17 @@ myConfig =
     , terminal = "kitty"
     , layoutHook = spacingWithEdge 5 myLayout
     , borderWidth = 2
-    -- , logHook = myXmobar
+    , startupHook = myStartupHook
     }
     `additionalKeysP` [ ("M-S-b", spawn "brave-browser")
                       ]
 
 myXmobarPP :: PP
 myXmobarPP = def
+
+myStartupHook :: X ()
+myStartupHook = do
+  spawnOnce "feh --bg-fill ~/wallpapers/wallpaper.png"
 
 main :: IO ()
 main =

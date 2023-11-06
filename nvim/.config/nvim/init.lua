@@ -107,6 +107,15 @@ require('lazy').setup({
 
   { "mcchrish/zenbones.nvim" },
   { "NLKNguyen/papercolor-theme" },
+  {
+    "sainnhe/gruvbox-material",
+    config = function()
+      vim.g.gruvbox_material_background = 'hard'
+      vim.o.termguicolors = true
+      vim.o.background = 'dark'
+      vim.cmd 'colorscheme gruvbox-material'
+    end
+  },
 
   -- {
   --   -- Theme inspired by Atom
@@ -124,7 +133,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'PaperColor',
+        theme = 'gruvbox-material',
         component_separators = '|',
         section_separators = '',
       },
@@ -229,6 +238,9 @@ require('lazy').setup({
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+-- require('lualine.themes.gruvbox_dark').setup({})
+-- vim.cmd.packadd({ 'gruvbox-material', bang = true })
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
@@ -238,8 +250,9 @@ vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.relativenumber = true
-vim.cmd.colorscheme 'PaperColor'
-vim.o.background = 'dark'
+-- vim.cmd.colorscheme 'gruvbox-material'
+-- vim.o.background = 'dark'
+-- vim.g.gruvbox_material_background = 'hard'
 
 -- Enable mouse mode
 vim.o.mouse = 'a'

@@ -22,7 +22,7 @@ myConfig =
   def
     { modMask = mod4Mask
     , terminal = "kitty"
-    , layoutHook = spacingWithEdge 5 myLayout
+    , layoutHook = spacingWithEdge 10 myLayout
     , borderWidth = 2
     , startupHook = myStartupHook
     }

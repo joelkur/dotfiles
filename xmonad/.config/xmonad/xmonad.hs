@@ -25,6 +25,8 @@ myConfig =
     , layoutHook = spacingWithEdge 10 myLayout
     , borderWidth = 2
     , startupHook = myStartupHook
+    , focusedBorderColor = "#ea6962"
+    , normalBorderColor = "#d4be98"
     }
     `additionalKeysP` [ ("M-S-b", spawn "brave-browser")
                       ]

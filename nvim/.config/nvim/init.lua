@@ -330,6 +330,7 @@ require("nvim-tree").setup()
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
   defaults = {
+    file_ignore_patterns = { ".git", "node%_modules" },
     mappings = {
       i = {
         ['<C-u>'] = false,

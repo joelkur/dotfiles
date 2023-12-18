@@ -79,7 +79,7 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
       on_attach = function(bufnr)
-        vim.keymap.set('n', '<leader>hp', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
+        vim.keymap.set('n', '<leader>gp', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
 
         -- don't override the built-in and fugitive keymaps
         local gs = package.loaded.gitsigns
@@ -211,6 +211,19 @@ require('lazy').setup({
     'mrcjkb/haskell-tools.nvim',
     version = "^3",
     ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject' }
+  },
+
+  {
+    'smoka7/hop.nvim',
+    version = "*",
+    opts = {},
+  },
+
+  {
+    'NvChad/nvim-colorizer.lua',
+    config = function()
+      require('colorizer').setup()
+    end,
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart

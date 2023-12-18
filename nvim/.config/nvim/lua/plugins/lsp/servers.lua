@@ -12,6 +12,7 @@ return {
   -- clangd = {},
   -- gopls = {},
   pyright = {},
+  emmet_ls = {},
   -- rust_analyzer = {},
   tsserver = {
     root_dir = nvim_lsp.util.root_pattern("package.json"),

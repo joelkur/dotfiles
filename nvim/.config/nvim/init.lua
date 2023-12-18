@@ -1,7 +1,6 @@
 require 'core.options'
 require 'core.lazy'
 require 'core.keymaps'
-require 'plugins.nvim-tree'
 require 'plugins.telescope'
 require 'plugins.lsp.init'
 require 'plugins.nvim-cmp'

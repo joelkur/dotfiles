@@ -222,8 +222,18 @@ require('lazy').setup({
   {
     'NvChad/nvim-colorizer.lua',
     config = function()
-      require('colorizer').setup()
+      require('colorizer').setup {}
     end,
+  },
+
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart

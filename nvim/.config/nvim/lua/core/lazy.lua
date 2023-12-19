@@ -230,6 +230,16 @@ require('lazy').setup({
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
+      signs = true,      -- show icons in the signs column
+      sign_priority = 8, -- sign priority
+      colors = {
+        error = { "DiagnosticError", "ErrorMsg", "#ea6962" },
+        warning = { "DiagnosticWarn", "WarningMsg", "#a9b665" },
+        info = { "DiagnosticInfo", "#7daea3" },
+        hint = { "DiagnosticHint", "#a9b665" },
+        default = { "Identifier", "#d3869b" },
+        test = { "Identifier", "#d4be98" }
+      },
       -- your configuration comes here
       -- or leave it empty to use the default settings
       -- refer to the configuration section below

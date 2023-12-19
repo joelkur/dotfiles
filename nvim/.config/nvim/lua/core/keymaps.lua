@@ -77,4 +77,4 @@ vim.keymap.set('n', '<leader>fb', ":NvimTreeToggle<CR>",
 local tc = require 'todo-comments'
 vim.keymap.set('n', ']t', tc.jump_next, { desc = "Jump to next todo comment" })
 vim.keymap.set('n', '[t', tc.jump_prev, { desc = "Jump to previous todo comment" })
-vim.keymap.set('n', '<leader>st', tc.jump_prev, { desc = "Jump to previous todo comment" })
+vim.keymap.set('n', '<leader>st', ':TodoTelescope<CR>', { desc = "Jump to previous todo comment" })

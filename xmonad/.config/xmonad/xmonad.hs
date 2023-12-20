@@ -21,7 +21,7 @@ myLayout = smartBorders $ spacingWithEdge 10 $ tiled ||| Mirror tiled ||| Full |
 myConfig =
   def
     { modMask = mod4Mask,
-      terminal = "kitty",
+      terminal = "wezterm",
       layoutHook = myLayout,
       borderWidth = 2,
       startupHook = myStartupHook,

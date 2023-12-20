@@ -20,6 +20,13 @@ else
   sudo dnf copr enable atim/lazygit -y
 fi
 
+if dnf repolist | grep -q wezterm; then
+  echo "Wezterm is installed - skipping adding repo for install"
+else
+  echo "Adding repos for installing wezterm"
+  sudo dnf copr enable wezfurlong/wezterm-nightly -y
+fi
+
 if dnf repolist | grep -q docker-ce; then
   echo "Docker is installed - skipping adding repos for install"
 else
@@ -30,7 +37,7 @@ else
 fi
 
 echo "Installing packages"
-sudo dnf install alacritty neovim nitrogen thunar polybar stow zsh ripgrep xclip git lazygit brave-browser stack solaar docker-ce docker-ce-cli containerd.io docker-compose-plugin syncthing keepassxc qutebrowser mpv ranger w3m kitty libX11-devel libXft-devel libXinerama-devel libXrandr-devel libXScrnSaver-devel xorg-x11-xinit-session xmobar
+sudo dnf install alacritty neovim nitrogen thunar polybar stow zsh ripgrep xclip git lazygit brave-browser stack solaar docker-ce docker-ce-cli containerd.io docker-compose-plugin syncthing keepassxc qutebrowser mpv ranger w3m kitty libX11-devel libXft-devel libXinerama-devel libXrandr-devel libXScrnSaver-devel xorg-x11-xinit-session xmobar wezterm
 
 if grep -q docker /etc/group; then
   echo "User already added to docker group"

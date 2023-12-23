@@ -70,6 +70,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 vim.keymap.set('n', '<leader>ft', ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
   { desc = 'Telescope file browser' })
+vim.keymap.set('n', '<leader>fo', ":Oil<CR>", { desc = 'Open Oil in parent directory' })
 vim.keymap.set('n', '<leader>fb', ":NvimTreeToggle<CR>",
   { desc = 'Toggle NvimTree' })
 

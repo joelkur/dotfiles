@@ -10,9 +10,8 @@ import XMonad.Util.Loggers
 import XMonad.Util.Run (hPutStrLn, spawnPipe)
 import XMonad.Util.SpawnOnce (spawnOnce)
 
-myLayout = smartBorders $ spacingWithEdge 10 $ tiled ||| Mirror tiled ||| Full ||| threeCol
+myLayout = smartBorders $ spacingWithEdge 10 $ tiled ||| Full
   where
-    threeCol = ThreeColMid nmaster delta ratio
     tiled = Tall nmaster delta ratio
     nmaster = 1
     ratio = 1 / 2

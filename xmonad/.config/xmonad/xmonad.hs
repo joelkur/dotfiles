@@ -28,7 +28,7 @@ myConfig =
       focusedBorderColor = "#ea6962",
       normalBorderColor = "#d4be98"
     }
-    `additionalKeysP` [ ("M-S-b", spawn "brave-browser")
+    `additionalKeysP` [ ("M-S-b", spawn "librewolf")
                       ]
 
 myXmobarPP :: PP

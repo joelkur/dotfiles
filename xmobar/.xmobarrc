@@ -1,10 +1,10 @@
 Config { 
    -- appearance
-     font =         "IosevkaTerm Nerd Font 22"
+     font =         "IosevkaTerm Nerd Font 16"
    , alpha = 155
    , bgColor =      "#121212"
    , fgColor =      "#d4be98"
-   , position =     TopSize C 100 42
+   , position =     TopSize C 100 32
 
    -- layout
    , sepChar =  "%"   -- delineator between plugin names and straight text

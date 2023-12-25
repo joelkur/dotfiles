@@ -1,7 +1,7 @@
 Config { 
    -- appearance
      font =         "IosevkaTerm Nerd Font 16"
-   , alpha = 155
+   , alpha = 205
    , bgColor =      "#121212"
    , fgColor =      "#d4be98"
    , position =     TopSize C 100 32

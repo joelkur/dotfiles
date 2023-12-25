@@ -95,6 +95,6 @@ config.font = wezterm.font 'IosevkaTerm Nerd Font Mono'
 config.hide_tab_bar_if_only_one_tab = true
 
 config.audible_bell = "Disabled"
-config.window_background_opacity = 0.8
+config.window_background_opacity = 0.85
 
 return config

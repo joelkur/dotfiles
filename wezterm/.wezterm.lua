@@ -13,8 +13,8 @@ local foreground_color = '#d4be98'
 local colors = {
   bg = background_color,
   fg = foreground_color,
-  selection_bg = foreground_color,
-  selection_fg = background_color,
+  selection_bg = "rgba(212, 190, 152, 0.25)",
+  selection_fg = "rgba(18, 18, 18, 0.25)",
   cursor = '#a89984',
   cursor_text = background_color,
 

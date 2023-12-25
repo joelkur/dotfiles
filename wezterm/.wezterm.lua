@@ -6,7 +6,9 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-local background_color = '#1d2021'
+-- local background_color = '#1d2021'
+local background_color = '#121212'
+-- local background_color = 'rgba(0,0,0,0.2)'
 local foreground_color = '#d4be98'
 local colors = {
   bg = background_color,
@@ -93,5 +95,6 @@ config.font = wezterm.font 'IosevkaTerm Nerd Font Mono'
 config.hide_tab_bar_if_only_one_tab = true
 
 config.audible_bell = "Disabled"
+config.window_background_opacity = 0.8
 
 return config

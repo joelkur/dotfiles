@@ -38,6 +38,7 @@ myXmobarPP = def
 myStartupHook :: X ()
 myStartupHook = do
   spawnOnce "feh --bg-fill ~/wallpapers/wallpaper.png"
+  spawnOnce "picom"
 
 main :: IO ()
 main =

@@ -35,7 +35,7 @@ else
 fi
 
 echo "Installing packages"
-sudo dnf install alacritty neovim nitrogen thunar polybar stow zsh ripgrep xclip git lazygit stack solaar docker-ce docker-ce-cli containerd.io docker-compose-plugin syncthing keepassxc qutebrowser mpv ranger w3m kitty libX11-devel libXft-devel libXinerama-devel libXrandr-devel libXScrnSaver-devel xorg-x11-xinit-session xmobar wezterm librewolf picom dbus-devel gcc git libconfig-devel libdrm-devel libev-devel libX11-devel libX11-xcb libXext-devel libxcb-devel libGL-devel libEGL-devel meson pcre2-devel pixman-devel uthash-devel xcb-util-image-devel xcb-util-renderutil-devel xorg-x11-proto-devel
+sudo dnf install alacritty neovim nitrogen thunar polybar stow zsh ripgrep xclip git lazygit stack solaar docker-ce docker-ce-cli containerd.io docker-compose-plugin syncthing keepassxc qutebrowser mpv ranger w3m kitty libX11-devel libXft-devel libXinerama-devel libXrandr-devel libXScrnSaver-devel xorg-x11-xinit-session wezterm librewolf picom dbus-devel gcc git libconfig-devel libdrm-devel libev-devel libX11-devel libX11-xcb libXext-devel libxcb-devel libGL-devel libEGL-devel meson pcre2-devel pixman-devel uthash-devel xcb-util-image-devel xcb-util-renderutil-devel xorg-x11-proto-devel
 
 if grep -q docker /etc/group; then
   echo "User already added to docker group"

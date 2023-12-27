@@ -27,14 +27,16 @@ font' = "IosevkaTerm Nerd Font 16"
 alignSep' :: String
 alignSep' = "}{"
 
-wrapSpaces :: String -> String
-wrapSpaces s = "  " ++ s ++ "  "
+wrapSpaces :: Int -> String -> String
+wrapSpaces n s = spaces ++ s ++ spaces
+ where
+  spaces = intercalate "" $ map (const " ") (take n [1 ..])
 
 applyAlignSep :: String -> String -> String
 applyAlignSep l r = l ++ alignSep' ++ r
 
 buildTemplate :: [String] -> [String] -> String
-buildTemplate left right = wrapSpaces $ applyAlignSep (section left) (section right)
+buildTemplate left right = wrapSpaces 2 $ applyAlignSep (section left) (section right)
  where
   section = intercalate " | "
 

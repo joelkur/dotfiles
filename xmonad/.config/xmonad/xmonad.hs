@@ -30,6 +30,7 @@ myConfig =
     , normalBorderColor = "#d4be98"
     }
     `additionalKeysP` [ ("M-S-b", spawn "librewolf")
+                      , ("M-S-l", spawn "i3lock -c 121212")
                       ]
 
 myXmobarPP :: PP

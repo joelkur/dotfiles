@@ -3,6 +3,8 @@ module Main (main) where
 import Data.List (intercalate)
 import Xmobar
 
+-- TODO: At some point merge xmonad and xmobar configs to be in the same project
+
 bgAlpha :: Int
 bgAlpha = 205
 
@@ -25,24 +27,34 @@ font' = "IosevkaTerm Nerd Font 16"
 alignSep' :: String
 alignSep' = "}{"
 
-buildTemplate :: [String] -> [String] -> String -> String
-buildTemplate left right sep =
-  "  "
-    ++ intercalate sep left
-    ++ " "
-    ++ alignSep'
-    ++ " "
-    ++ intercalate sep right
-    ++ "  "
+wrapSpaces :: String -> String
+wrapSpaces s = "  " ++ s ++ "  "
+
+applyAlignSep :: String -> String -> String
+applyAlignSep l r = l ++ alignSep' ++ r
+
+buildTemplate :: [String] -> [String] -> String
+buildTemplate left right = wrapSpaces $ applyAlignSep (section left) (section right)
+ where
+  section = intercalate " | "
 
 tmplLeft :: [String]
-tmplLeft = ["%battery%", "%multicpu%", "%coretemp%", "%memory%", "%dynnetwork%"]
+tmplLeft =
+  [ "%battery%"
+  , "%multicpu%"
+  , "%coretemp%"
+  , "%memory%"
+  , "%dynnetwork%"
+  ]
 
 tmplRight :: [String]
-tmplRight = ["dnf: " ++ fc "%dnfupdates%" Green, "%date%"]
+tmplRight =
+  [ "dnf: " ++ fc "%dnfupdates%" Green
+  , "%date%"
+  ]
 
 template' :: String
-template' = buildTemplate tmplLeft tmplRight " | "
+template' = buildTemplate tmplLeft tmplRight
 
 cmdParams'' :: Bool -> String -> Int -> Int -> [String]
 cmdParams'' invertColors tmplt low high =

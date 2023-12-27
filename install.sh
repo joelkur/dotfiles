@@ -95,8 +95,8 @@ fi
 (
   cd xmonad/.config/xmonad &&
   cabal update &&
-  cabal install --package-env=./ --lib base xmonad xmonad-contrib &&
-  cabal install --package-env=./ xmonad
+  cabal install --overwrite-policy=always --package-env=./ --lib base xmonad xmonad-contrib &&
+  cabal install --overwrite-policy=always --package-env=./ xmonad
 )
 
 (

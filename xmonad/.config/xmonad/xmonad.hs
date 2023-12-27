@@ -46,5 +46,5 @@ main =
     . ewmhFullscreen
     . ewmh
     . docks
-    . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) defToggleStrutsKey
+    . withEasySB (statusBarProp "my-xmobar-exe" (pure myXmobarPP)) defToggleStrutsKey
     $ myConfig

@@ -99,10 +99,10 @@ fi
   cabal install --package-env=./ xmonad
 )
 
-# TODO: maybe build xmobar from source in future. This just seems like too much of a hassle for now
-# (
-#   cd xmobar/.config/xmobar &&
-#   cabal update &&
-#   cabal install --package-env=./ --lib base xmobar &&
-#   cabal install --package-env=./ xmobar
-# )
+(
+  cd xmobar/.config/my-xmobar &&
+  stack clean &&
+  stack update &&
+  stack build &&
+  stack install
+)

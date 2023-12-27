@@ -42,16 +42,16 @@ buildTemplate left right = wrapSpaces 2 $ applyAlignSep (section left) (section 
 
 tmplLeft :: [String]
 tmplLeft =
-  [ "%battery%"
-  , "%multicpu%"
-  , "%coretemp%"
-  , "%memory%"
-  , "%dynnetwork%"
+  [ "%XMonadLog%"
   ]
 
 tmplRight :: [String]
 tmplRight =
-  [ "dnf: " ++ fc "%dnfupdates%" Green
+  [ -- "%dynnetwork%"
+    -- , "%multicpu%"
+    -- , "%memory%"
+    "%battery%"
+  , "dnf: " ++ fc "%dnfupdates%" Green
   , "%date%"
   ]
 
@@ -83,7 +83,7 @@ cmdParams = cmdParams'' False
 data Template = TNetwork | TCpu | TTemp | TMemory | TBattery
 
 tmpl :: Template -> String
-tmpl TNetwork = "<dev> <tx>kB/s|<rx>kB/s"
+tmpl TNetwork = "net: <tx>kB/s|<rx>kB/s"
 tmpl TCpu = "cpu: <total0>%|<total1>%"
 tmpl TTemp = "temp: <core0>°C|<core1>°C"
 tmpl TMemory = "ram: <usedratio>%"
@@ -102,13 +102,14 @@ batteryExtraParams =
 
 commands' :: [Runnable]
 commands' =
-  [ Run $ DynNetwork (cmdParams (tmpl TNetwork) 1000 5000) 50
-  , Run $ MultiCpu (cmdParams (tmpl TCpu) 50 85) 50
-  , Run $ CoreTemp (cmdParams (tmpl TTemp) 70 80) 50
-  , Run $ Memory (cmdParams (tmpl TMemory) 20 90) 50
-  , Run $ Battery (cmdParams' (tmpl TBattery) 15 75 ++ batteryExtraParams) 50
+  [ -- Run $ DynNetwork (cmdParams (tmpl TNetwork) 1000 5000) 50
+    -- , Run $ MultiCpu (cmdParams (tmpl TCpu) 50 85) 50
+    -- , Run $ CoreTemp (cmdParams (tmpl TTemp) 70 80) 50
+    -- , Run $ Memory (cmdParams (tmpl TMemory) 20 90) 50
+    Run $ Battery (cmdParams' (tmpl TBattery) 15 75 ++ batteryExtraParams) 50
   , Run $ Date (fc "%F %T" Blue) "date" 10
   , Run $ Com "bash" ["-c", "echo $(dnf check-update -y | grep -Ec \"updates\")"] "dnfupdates" 18000
+  , Run XMonadLog
   ]
 
 config :: Config

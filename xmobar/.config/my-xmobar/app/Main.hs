@@ -106,7 +106,7 @@ commands' =
   , Run $ MultiCpu (cmdParams (tmpl TCpu) 50 85) 50
   , Run $ CoreTemp (cmdParams (tmpl TTemp) 70 80) 50
   , Run $ Memory (cmdParams (tmpl TMemory) 20 90) 50
-  , Run $ Battery (cmdParams' (tmpl TBattery) 20 90 ++ batteryExtraParams) 50
+  , Run $ Battery (cmdParams' (tmpl TBattery) 15 75 ++ batteryExtraParams) 50
   , Run $ Date (fc "%F %T" Blue) "date" 10
   , Run $ Com "bash" ["-c", "echo $(dnf check-update -y | grep -Ec \"updates\")"] "dnfupdates" 18000
   ]

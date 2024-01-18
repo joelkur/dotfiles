@@ -11,6 +11,7 @@ local nvim_lsp = require("lspconfig")
 return {
   -- clangd = {},
   -- gopls = {},
+  marksman = {},
   pyright = {},
   emmet_ls = {},
   -- rust_analyzer = {},

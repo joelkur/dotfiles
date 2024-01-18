@@ -263,6 +263,7 @@ require('lazy').setup({
       require('transparent').clear_prefix('lualine')
     end
   },
+  { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.

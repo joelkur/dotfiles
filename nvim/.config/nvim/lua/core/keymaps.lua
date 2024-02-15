@@ -31,6 +31,8 @@ vim.keymap.set('n', '<leader>hf', function()
   hop.hint_char1({})
 end, { desc = "Hop with hints" })
 
+vim.keymap.set('n', '<leader>t', ':ToggleTerm<CR>', { desc = 'Toggle terminal' })
+
 -- document existing key chains
 require('which-key').register({
   ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },

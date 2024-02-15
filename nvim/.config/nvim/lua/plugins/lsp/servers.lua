@@ -24,6 +24,11 @@ return {
   },
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   elixirls = {},
+  omnisharp = {
+    handlers = {
+      ["textDocument/definition"] = require("omnisharp_extended").handler,
+    },
+  },
   tailwindcss = {
     init_options = {
       userLanguages = {

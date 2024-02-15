@@ -20,6 +20,7 @@ vim.defer_fn(function()
       "heex",
       "eex",
       "haskell",
+      "c_sharp",
     },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)

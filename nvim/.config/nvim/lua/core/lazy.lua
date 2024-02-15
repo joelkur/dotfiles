@@ -38,6 +38,7 @@ require('lazy').setup({
       -- Automatically install LSPs to stdpath for neovim
       { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
+      'jayp0521/mason-null-ls.nvim',
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
@@ -46,6 +47,14 @@ require('lazy').setup({
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
     },
+    config = function()
+      require('mason-null-ls').setup({
+        ensure_installed = {
+          "csharpier",
+        },
+        automatic_installation = true,
+      })
+    end
   },
 
   {
@@ -265,13 +274,25 @@ require('lazy').setup({
   },
 
   {
+    'akinsho/toggleterm.nvim',
+    version = "*",
+    config = function()
+      require('toggleterm').setup({
+        direction = 'float'
+      })
+    end
+  },
+
+  { 'Hoffs/omnisharp-extended-lsp.nvim' },
+
+  {
     "xiyaowong/transparent.nvim",
     config = function()
       require("transparent").setup {}
       require('transparent').clear_prefix('lualine')
     end
   },
-  { "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
+  { "ellisonleao/glow.nvim",            config = true, cmd = "Glow" },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.

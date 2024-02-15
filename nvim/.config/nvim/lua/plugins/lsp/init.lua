@@ -120,5 +120,16 @@ vim.g.haskell_tools = {
   dap = {},
 }
 
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "*.cs",
+  callback = function()
+    if not io.open(os.getenv("MASON") .. "/bin/dotnet-csharpier", "r") then
+      return error("Error while formatting current file, missing dotnet-csharpier binary")
+    end
+
+    vim.cmd("silent !dotnet-csharpier --fast %")
+  end,
+})
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
